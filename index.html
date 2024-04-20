@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Atividade - João Victor</title>
+</head>
+<body>
+    <form action="">
+        <input id= "peso" type="text" placeholder="Peso"/>
+        <input id= "altura" type="text" placeholder="Altura"/>
+    </form>
+
+    <button onclick="calcularimc()"> Calcular</button>
+
+    <div id= "resultado"> Resultado: </div>
+
+    <script>
+    function calcularimc(){
+        pesoIserido= document.getElementById("peso").value
+        alturaInserida = document.getElementById("altura").value
+        imc = pesoIserido/(alturaInserida*2) 
+        document.getElementById("resultado").innerText = imc.toFixed(2)
+
+        if(pesoIserido=="" && alturaInserida==""){
+            alert("Campos não preenchidos")
+        }
+        if(imc < 18.5){
+            document.getElementById("resultado").style="background-color: #9C27B0"
+            abaixoDoPeso = "Usuário abaixo do peso"
+            document.getElementById("resultado").innerText = "Resultado: " + imc.toFixed(2)+ " " +"Diagnóstico: "+ abaixoDoPeso
+        }
+        else if (imc<=24.9 && imc>=18.5){
+            document.getElementById("resultado").style="background-color: #4CAF50"
+            pesoNormal = "Usuário com peso normal"
+            document.getElementById("resultado").innerText = "Resultado: " + imc.toFixed(2)+ " " +"Diagnóstico: "+ pesoNormal
+        }
+        else if (imc<=29.9 && imc>25){
+            document.getElementById("resultado").style="background-color: #FFC107"
+            sobrePeso = "Usuário com sobrepeso"
+            document.getElementById("resultado").innerText = "Resultado: " + imc.toFixed(2)+ " " +"Diagnóstico: "+ sobrePeso
+        }
+        else if (imc<=34.9 && imc>30){
+            document.getElementById("resultado").style="background-color:  #FF9800"
+            obesidadeI = "Usuário com obesidade grau I"
+            document.getElementById("resultado").innerText = "Resultado: " + imc.toFixed(2)+ " " +"Diagnóstico: "+ obesidadeI
+        }
+        else if (imc<=39.9 && imc>35){
+            document.getElementById("resultado").style="background-color: #FF5722"
+            obesidadeII = "Usuário com obesidade grau II"
+            document.getElementById("resultado").innerText = "Resultado: " + imc.toFixed(2)+ " " +"Diagnóstico: "+ obesidadeII
+        }
+        else if (imc>40){
+            document.getElementById("resultado").style="background-color: #795548"
+            obesidadeIII = "Usuário com obesidade grau III"
+            document.getElementById("resultado").innerText = "Resultado: " + imc.toFixed(2)+ " " +"Diagnóstico: "+ obesidadeIII
+        }
+    }
+/*
+switch(imc){
+    case imc < 18.5:
+        document.getElementById("resultado").style="background-color: #9C27B0"
+        break
+
+    case imc <=24.9 && imc>=18.5:
+        document.getElementById("resultado").style="background-color: #4CAF50"
+        break
+
+    case imc<=29.9 && imc>25:
+        document.getElementById("resultado").style="background-color: #FFC107"
+        break
+    
+    case imc<=34.9 && imc>30:
+        document.getElementById("resultado").style="background-color:  #FF9800"
+        break
+
+    case imc<=39.9 && imc>35:
+        document.getElementById("resultado").style="background-color: #FF5722"
+        break
+    
+    case imc>40:
+        document.getElementById("resultado").style="background-color: #795548"
+        break
+        */
+
+
+   
+    </script>
+</body>
+</html>
