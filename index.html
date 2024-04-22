@@ -19,7 +19,7 @@
     function calcularimc(){
         pesoIserido= document.getElementById("peso").value
         alturaInserida = document.getElementById("altura").value
-        imc = pesoIserido/(alturaInserida*2) 
+        imc = pesoIserido/(alturaInserida**2) 
         document.getElementById("resultado").innerText = imc.toFixed(2)
 
         if(pesoIserido=="" && alturaInserida==""){
